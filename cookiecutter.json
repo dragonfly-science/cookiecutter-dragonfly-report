@@ -1,7 +1,7 @@
 {
     "author": "Dragonfly Science",
     "report_slug": "report",
-    "report_directory": "report",
+    "repo_name": "report",
     "title": "Report title",
     "short_title": "Short title used at the bottom of the pages",
     "subtitle": "Subtitle displayed on the front page"
