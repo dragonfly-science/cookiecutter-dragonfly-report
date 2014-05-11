@@ -1,0 +1,8 @@
+{
+    "author": "the author or authors",
+    "report_slug": "The report filename, e.g., 'report-slug'",
+    "title": "Title of the report",
+    "short_title": "Short title used at the bottom of the pages",
+    "subtitle": "Subtitle displayed on the front page"
+}
+

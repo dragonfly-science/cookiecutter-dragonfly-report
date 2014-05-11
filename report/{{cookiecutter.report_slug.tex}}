@@ -1,0 +1,23 @@
+\documentclass{dragonfly-report}
+
+\title{ {{cookiecutter.short_title}} }{ {{cookiecutter.title}} }
+\subtitle{ {{cookiecutter.subtitle }}}
+
+\author{ {{cookiecutter.author }}}
+
+
+\addbibresource{ {{cookiecutter.bibliography}} }
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\input{introduction}
+\input{methods}
+\input{results}
+\input{discussion}
+
+\printbibliography
+
+\end{document}
