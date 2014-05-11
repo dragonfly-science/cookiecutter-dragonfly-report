@@ -5,6 +5,6 @@
     "title": "Report title",
     "short_title": "Short title used at the bottom of the pages",
     "subtitle": "Subtitle displayed on the front page",
-    "bibliography": "../bibliography/mfish.bib",
+    "bibliography": "../bibliography/mfish.bib"
 }
 
