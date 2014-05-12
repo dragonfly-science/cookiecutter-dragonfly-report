@@ -1,4 +1,3 @@
 #!/bin/bash
 
-#ln -s knitr/figure figure
-pwd;
+ln -s knitr/figure figure
