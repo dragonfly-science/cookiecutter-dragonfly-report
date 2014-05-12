@@ -1,9 +1,9 @@
-A cookiecutter template for starting a dragonfly report
+Starting a new dragonfly report
 =======================================================
 
-Use this template if you want to start a new report. This will produce a
-skeleton directory, with a standard structure that is suitable for latex and
-knitr projects in the dragonfly style.
+Use this template to start a new report. This will produce a
+skeleton directory, with a standard structure that is suitable for `latex` and
+`knitr` projects in the dragonfly style.
 
 ## Making a skeleton
 
@@ -52,6 +52,6 @@ done, run make, and you will be away laughing.
 If you want to include graphics and tables in your report, put them in `.Rnw`
 files in the `knitr` directory.  This has the benefit that once they have been
 made once, they will be tucked away safely, so that someone coming in to edit
-the text doesn't need to get bogged down in the complexities of the knitr
+the text doesn't need to get bogged down in the complexities of the `knitr`
 files.
 
