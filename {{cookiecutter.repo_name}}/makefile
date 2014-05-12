@@ -10,7 +10,7 @@ else
 	LATEXMK_OPTIONS=-xelatex
 endif
 
-report.pdf: $(KNITR) $(KNITRBASE) {{cookiecutter.report_slug}}.tex 
+{{cookiecutter.report_slug}}.pdf: $(KNITR) $(KNITRBASE) {{cookiecutter.report_slug}}.tex 
 	latexmk $(LATEXMK_OPTIONS) {{cookiecutter.report_slug}}.tex
 
 knitr/%.tex: knitr/%.Rnw
