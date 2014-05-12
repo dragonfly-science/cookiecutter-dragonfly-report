@@ -6,6 +6,6 @@
     "short_title": "Short title used at the bottom of the pages",
     "subtitle": "Subtitle displayed on the front page",
     "bibliography": "../bibliography/mfish.bib",
-    "documentclass": "dragonfly-latex"
+    "documentclass": "dragonfly-report"
 }
 
