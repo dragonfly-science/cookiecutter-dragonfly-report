@@ -1,3 +1,3 @@
 #!/bin/bash
 
-ln -s knitr/figure figure
+ln -sf knitr/figure figure
