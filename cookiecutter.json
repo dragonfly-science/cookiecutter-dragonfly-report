@@ -1,11 +1,11 @@
 {
-    "author": "Dragonfly Science",
+    "author": "The author",
     "report_slug": "report",
-    "repo_name": "report",
-    "title": "Report title",
-    "short_title": "Short title used at the bottom of the pages",
+    "title": "The full title",
+    "short_title": "Short title",
     "subtitle": "Subtitle displayed on the front page",
     "bibliography": "../bibliography/mfish.bib",
-    "documentclass": "dragonfly-report"
+    "documentclass": "dragonfly-report",
+    "repo_name": "report"
 }
 
