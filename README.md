@@ -44,7 +44,7 @@ tree below:
     └── results.Rnw
 ```
 
-## Using the report
+## Writing a report
 
 Hop in to the report directory and start editing the `Rnw` files. Once you are
 done, run make, and you will be away laughing.
