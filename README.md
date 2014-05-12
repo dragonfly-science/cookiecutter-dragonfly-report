@@ -18,7 +18,7 @@ Then, change to the directory that will contain your report directory and run:
 This will run through and ask you the following questions, either put in you
 response or accept the default:
 
-  * `author`: Put in the report authors, seperated by `and`
+  * `author`: Put in the report authors, separate multiple authors by `\and`
   * `report_slug`: The name to be used for the filename of the report, expressed as a slug (letters, characters, and dash), with no extension
   * `title`: The full report title
   * `short_title`: A short version of the title that will be used as a running header and footer
