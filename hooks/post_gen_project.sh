@@ -1,1 +1,2 @@
-ln -s knitr/figure figure
+#ln -s knitr/figure figure
+pwd
