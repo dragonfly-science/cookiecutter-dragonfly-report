@@ -1,8 +1,7 @@
-KNITR = $(addsuffix .tex, $(basename $(shell find knitr -iname "*.Rnw")))
-KNITR_BASE = $(addsuffix .tex, $(basename $(wildcard *.rnw)))
 OUTPUT_DIR={{cookiecutter.build_directory}}
 TARGET={{cookiecutter.report_slug}}.pdf
-
+KNITR = $(addsuffix .tex, $(basename $(shell find knitr -iname "*.Rnw")))
+KNITR_BASE = $(addprefix $(OUTPUT_DIR)/, $(addsuffix .tex, $(basename $(wildcard *.rnw))))
 
 #Actually setting a build output target  does not work with the old latexmk
 LATEXMK_VERSION=$(strip $(patsubst Version,,$(shell latexmk -v | grep -oi "version.*")))
@@ -36,10 +35,10 @@ $(OUTPUT_DIR):
 #have error text in the output pdf, rather than an error message in the compilation
 #process. 
 knitr/%.tex: knitr/%.{{cookiecutter.file_extension}}
-	(cd $(@D); Rscript -e "library(knitr);opts_chunk\$$set(warning=F, message = FALSE,echo=F,results='asis',fig.lp='fig:',fig.path='images/'); knit('$(<F)')")
+	(cd $(@D); Rscript --vanilla -e "library(knitr);opts_chunk\$$set(warning=F, message = FALSE,echo=F,results='asis',fig.lp='fig:',fig.path='images/'); knit('$(<F)')")
 
-%.tex: %.{{cookiecutter.file_extension}} $(KNITR)
-	Rscript -e "library(knitr); knit('$(<F)',output='$(OUTPUT_DIR)/$(@F)')"
+$(OUTPUT_DIR)/%.tex: %.{{cookiecutter.file_extension}} $(KNITR)
+	Rscript --vanilla -e "library(knitr);opts_chunk\$$set(warning=F, message = FALSE,echo=F,results='asis',fig.lp='fig:',fig.path='images/'); knit('$(<F)',output='$(OUTPUT_DIR)/$(@F)')"
 
 #Sometimes we want to blow away all of the R code output as well as just the latex stuff
 superclean: clean
