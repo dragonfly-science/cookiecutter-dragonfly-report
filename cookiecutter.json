@@ -4,8 +4,10 @@
     "title": "The full title",
     "short_title": "Short title",
     "subtitle": "Subtitle displayed on the front page",
-    "bibliography": "../bibliography/mfish.bib",
+    "bibliography": "~/bibliography/mfish.bib",
     "documentclass": "dragonfly-report",
-    "repo_name": "report"
+    "repo_name": "report",
+    "file_extension": "rnw",
+    "build_directory": "build"
 }
 

@@ -26,6 +26,8 @@ response or accept the default:
   * `bibliography`: The path and filename of the bibliography (`.bib`) file 
   * `documentclass (default is "dragonfly-report")`: The name of the latex class used for formatting the report
   * `repo_name (default is "report")`: The name of the directory that will house the report
+  * `file_extension (default is "rnw")`: Is the file extension that will be used for `Rnw` files. This
+is to allow for differences in case and also for `Rtex` files. 
 
 Once this is done, you will have a directory tree that looks something like the
 tree below:
@@ -33,8 +35,8 @@ tree below:
 ```
 .
 └── report
+    ├── .gitignore
     ├── discussion.Rnw
-    ├── figure -> knitr/figure
     ├── introduction.Rnw
     ├── knitr
     │   └── figure
@@ -53,5 +55,5 @@ If you want to include graphics and tables in your report, put them in `.Rnw`
 files in the `knitr` directory.  This has the benefit that once they have been
 made once, they will be tucked away safely, so that someone coming in to edit
 the text doesn't need to get bogged down in the complexities of the `knitr`
-files.
+files. These files can be included in the document without their paths. 
 
