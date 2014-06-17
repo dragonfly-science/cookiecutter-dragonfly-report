@@ -3,10 +3,6 @@ TARGET={{cookiecutter.report_slug}}.pdf
 KNITR = $(addsuffix .tex, $(basename $(shell find knitr -iname "*.Rnw")))
 KNITR_BASE = $(addprefix $(OUTPUT_DIR)/, $(addsuffix .tex, $(basename $(wildcard *.rnw))))
 
-#Actually setting a build output target  does not work with the old latexmk
-LATEXMK_VERSION=$(strip $(patsubst Version,,$(shell latexmk -v | grep -oi "version.*")))
-LATEXMK_OPTIONS=-xelatex -output-directory=$(OUTPUT_DIR)
-
 all: $(TARGET) 
 
 $(TARGET): $(OUTPUT_DIR)/$(TARGET)
@@ -14,26 +10,14 @@ $(TARGET): $(OUTPUT_DIR)/$(TARGET)
 
 #We need to fall back to manually calling the programs if using old latexmk
 $(OUTPUT_DIR)/$(TARGET): $(TARGET:%.pdf=%.tex) $(OUTPUT_DIR) $(KNITR) $(KNITR_BASE)
-ifeq ($(LATEXMK_VERSION),4.24)
 	TEXINPUTS=.///: xelatex -output-directory=$(OUTPUT_DIR) $<
 	biber --output_directory=$(OUTPUT_DIR) $(<:%.tex=%)
 	TEXINPUTS=.///: xelatex -output-directory=$(OUTPUT_DIR) $<
 	TEXINPUTS=.///: xelatex -output-directory=$(OUTPUT_DIR)  $<
-else
-	 latexmk $(LATEXMK_OPTIONS) $<
-endif
 
 $(OUTPUT_DIR):
 	mkdir -p $(OUTPUT_DIR)
 	
-#Sweave and knitr have different mechanisms for dealing with R errors. 
-#In most cases as Sweave run will fail and return an error if there is an
-#error generated in the underlying R code. This error is propogated out and 
-#stops the makefile and therefore the entire complation process. In contrast
-#knitr will handle most errors and not propogate them out where possible. This 
-#means that a much larger number of programs will successfully compile, but will
-#have error text in the output pdf, rather than an error message in the compilation
-#process. 
 knitr/%.tex: knitr/%.{{cookiecutter.file_extension}}
 	(cd $(@D); Rscript --vanilla -e "library(knitr);opts_chunk\$$set(warning=F, message = FALSE,echo=F,results='asis',fig.lp='fig:',fig.path='images/'); knit('$(<F)')")
 
