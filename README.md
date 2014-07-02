@@ -31,6 +31,7 @@ response or accept the default:
   * `repo_name (default is "report")`: The name of the directory that will house the report
   * `file_extension (default is "rnw")`: Is the file extension that will be used for `Rnw` files. This
 is to allow for differences in case and also for `Rtex` files. 
+  * `build_directory (default is "build")`: a directory to hold all the intermediate files
 
 Once this is done, you will have a directory tree that looks something like the
 tree below:
