@@ -9,6 +9,8 @@ skeleton directory, with a standard structure that is suitable for `latex` and
 
 Firstly, install cookiecutter:
 
+
+  `sudo easy_install pip` (use this line if you don't already have `pip`)
   `sudo pip install cookiecutter`
   
 Then, change to the directory that will contain your report directory and run:
